@@ -26,7 +26,7 @@ public class CatalogoListener {
     public void recibirMensajeCatalogo(String mensajeJson) {
         logger.info("Mensaje recibido en {}: {}", RabbitMQConfig.QUEUE_CATALOGO, mensajeJson);
         try {
-            // Deserializar el JSON a PublicacionRecibidaDto
+
             PublicacionRecibidaDto publicacionRecibida = objectMapper.readValue(mensajeJson, PublicacionRecibidaDto.class);
 
             if (publicacionRecibida.getTipoPublicacion() == null || publicacionRecibida.getDatos() == null) {
@@ -39,7 +39,7 @@ public class CatalogoListener {
         } catch (Exception e) {
             logger.error("Error al procesar mensaje de la cola {}: {}. Mensaje: {}",
                     RabbitMQConfig.QUEUE_CATALOGO, e.getMessage(), mensajeJson, e);
-            // Aquí podrías implementar una lógica de reintento o enviar a una Dead Letter Queue (DLQ)
+
         }
     }
 }

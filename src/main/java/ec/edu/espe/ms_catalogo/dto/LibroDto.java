@@ -20,6 +20,6 @@ public class LibroDto {
     private int numeroPaginas;
     private String edicion;
 
-    private long idAutor; // Para referencia, aunque no se guarde directamente en catálogo
-    private String tipo; // Para ayudar a identificar el tipo en el listener
+    private long idAutor;
+    private String tipo;
 }

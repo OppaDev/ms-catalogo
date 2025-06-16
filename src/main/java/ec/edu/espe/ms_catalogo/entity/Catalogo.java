@@ -19,7 +19,7 @@ public class Catalogo {
     private int anioPublicacion;
     private String editorial;
 
-    @Column(unique = true, nullable = true) // ISBN puede ser único si existe, y nulo
+    @Column(unique = true, nullable = true)
     private String isbn;
 
     @Lob // Para textos largos
@@ -32,16 +32,16 @@ public class Catalogo {
 
     // Campos específicos para LIBRO
     private String genero;
-    private Integer numeroPaginas; // Usar Integer para permitir null si no es libro
+    private Integer numeroPaginas;
     private String edicion;
 
     // Campos específicos para ARTICULO
     private String revista;
 
-    @Column(unique = true, nullable = true) // DOI puede ser único si existe, y nulo
+    @Column(unique = true, nullable = true)
     private String doi;
     private String areaInvestigacion;
-    private String fechaPublicacionArticulo; // e.g., "2023-10-15"
+    private String fechaPublicacionArticulo;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime fechaRegistro;

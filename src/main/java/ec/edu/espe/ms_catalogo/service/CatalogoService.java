@@ -26,7 +26,7 @@ public class CatalogoService {
     private CatalogoRepository catalogoRepository;
 
     @Autowired
-    private ObjectMapper objectMapper; // Spring Boot auto-configura un ObjectMapper
+    private ObjectMapper objectMapper;
 
     @Transactional
     public void procesarYGuardarPublicacion(PublicacionRecibidaDto publicacionRecibida) {
@@ -69,7 +69,7 @@ public class CatalogoService {
 
             } else {
                 logger.warn("Tipo de publicación desconocido: {}", publicacionRecibida.getTipoPublicacion());
-                return; // No procesar si el tipo es desconocido
+                return;
             }
 
             catalogoRepository.save(catalogo);
@@ -79,7 +79,7 @@ public class CatalogoService {
             logger.error("Error al deserializar los datos de la publicación: {}", e.getMessage(), e);
         } catch (Exception e) {
             logger.error("Error al procesar y guardar la publicación: {}", e.getMessage(), e);
-            // Considerar lanzar una excepción personalizada o re-lanzar para manejo transaccional
+
         }
     }
 

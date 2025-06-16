@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PublicacionRecibidaDto {
-    private String tipoPublicacion; // "LIBRO" o "ARTICULO"
-    private JsonNode datos; // Usamos JsonNode para flexibilidad en la deserialización
+    private String tipoPublicacion;
+    private JsonNode datos;
 }
