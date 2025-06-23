@@ -20,4 +20,9 @@ public class RabbitMQConfig {
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
+
+    @Bean
+    public Queue relojQueue() {
+        return QueueBuilder.durable("reloj.solicitud").build();
+    }
 }
